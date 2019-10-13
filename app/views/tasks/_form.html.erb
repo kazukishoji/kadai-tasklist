@@ -1,10 +1,10 @@
 <%= form_with(model: task, local: true) do |f| %>
 
-<% if task.errors.any? %>
+<% if message.errors.any? %>
 
     <div id="error_explanation">
         <ul>
-<% task.errors.full_messages.each do |msg| %>
+<% message.errors.full_messages.each do |msg| %>
             <li>
 <%= msg %>
 </li>
@@ -13,7 +13,7 @@
     </div>
 <% end %>
 
-<%= f.label :status, "属性" %>
+<%= f.label :status, "状態" %>
 
 <%= f.text_field :status %>
 
