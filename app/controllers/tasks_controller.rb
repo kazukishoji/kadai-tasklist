@@ -27,7 +27,6 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
     end
     
     def update
-        
         if @task.update(task_params)
             flash[:success] = "タスクは更新されました"
             redirect_to @task
@@ -43,14 +42,14 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
         flash[:success] = "タスクは削除されました"
         redirect_to tasks_url
     end
-end
 
-private
+    private
 
-def set_task
-    @task = Task.find(params[:id])
-end
+    def set_task
+        @task = Task.find(params[:id])
+    end
 
-def task_params
-    params.require(:task).permit(:content, :status)
+    def task_params
+        params.require(:task).permit(:content, :status)
+    end
 end
