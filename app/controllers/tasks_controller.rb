@@ -31,7 +31,7 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
             flash[:success] = "タスクは更新されました"
             redirect_to @task
         else
-            falsh.now[:danger] = "更新に失敗しました"
+            flash.now[:danger] = "更新に失敗しました"
             render :edit
         end
     end
