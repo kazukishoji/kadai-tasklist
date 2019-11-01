@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/delete'
     root to: "tasks#index"
     
     get "login", to: "sessions#new"
